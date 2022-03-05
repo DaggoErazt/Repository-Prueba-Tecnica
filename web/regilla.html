@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function agregarFila(){
+                document.getElementById("tablaModif").insertRow(1).innerHTML = '<td></td><td></td><td></td><td></td><td></td><td></td><td></td>';
+              }
+
+              function eliminarFila(){
+                var table = document.getElementById("tablaModif");
+                var rowCount = table.rows.length;
+                //console.log(rowCount);
+
+                if(rowCount <= 6)
+                  alert('No se puede eliminar el encabezado');
+                else
+                  table.deleteRow(rowCount -1);
+              }
+        </script>
+    </head>
+    <body>
+        <div>
+            <table  class="table table-bordered" id="tablaModif">
+                <tr>
+                    <th colspan="2">Numero Factuta</th>
+                    <td colspan="2"></td>
+                    <th colspan="2">Documento</th>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Fecha</th>
+                    <td colspan="2"></td>
+                    <th colspan="2">Nombre</th>
+                    <td colspan="2"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Tipo Pago</th>
+                    <td colspan="2"></td>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <th >Producto</th>
+                    <th >Cantidad</th>
+                    <th >Precio Unitario</th>
+                    <th >Iva</th>
+                    <th >Total Impuesto</th>
+                    <th >Descuento</th>
+                    <th >Subtotal</th>
+                </tr>
+                <tr>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                    <td ></td>
+                </tr>
+                <tr>
+                    <td colspan="5"></td>
+                    <th >Total</th>
+                    <td ></td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+      <button type="button" class="btn btn-primary mr-2" onclick="agregarFila()">Agregar Fila</button>
+      <button type="button" class="btn btn-danger" onclick="eliminarFila()">Eliminar Fila</button>
+    </div>
+    </body>
+</html>
